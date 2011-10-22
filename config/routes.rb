@@ -1,7 +1,11 @@
 BackboneAdmin::Application.routes.draw do
+  get "site/index"
+
   devise_for :users do
     get "/logout" => "devise/sessions#destroy"
   end
+
+  root :to => 'site#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
